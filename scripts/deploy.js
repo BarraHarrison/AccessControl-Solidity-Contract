@@ -4,8 +4,6 @@ async function main() {
     const { ethers } = hre;
     console.log("🚀 Deploying AccessControlSecurity contract...");
 
-    await hre.run("compile");
-
     const AccessControlSecurity = await ethers.deployContract("AccessControlSecurity");
     console.log("⏳ Waiting for deployment confirmation...");
     await AccessControlSecurity.waitForDeployment();
