@@ -4,11 +4,13 @@ async function main() {
     const { ethers } = hre;
     console.log("🚀 Deploying AccessControlSecurity contract...");
 
-    const AccessControlSecurity = await ethers.deployContract("AccessControlSecurity");
-    console.log("⏳ Waiting for deployment confirmation...");
-    await AccessControlSecurity.waitForDeployment();
+    const AccessControlSecurity = await ethers.getContractFactory("AccessControlSecurity");
+    const contract = await AccessControlSecurity.deploy()
 
-    const deployedAddress = await AccessControlSecurity.getAddress();
+    console.log("⏳ Waiting for deployment confirmation...");
+    await contract.waitForDeployment();
+
+    const deployedAddress = await contract.getAddress();
     console.log(`✅ AccessControlSecurity deployed at: ${deployedAddress}`)
 }
 
