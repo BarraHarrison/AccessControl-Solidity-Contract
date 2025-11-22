@@ -1,6 +1,7 @@
-import { ethers } from "hardhat";
+import hre from "hardhat";
 
 async function main() {
+    const { ethers } = hre;
     console.log("🚀 Deploying AccessControlSecurity contract...");
 
     await hre.run("compile");
