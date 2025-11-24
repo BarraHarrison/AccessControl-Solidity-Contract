@@ -1,7 +1,6 @@
-import { HardhatUserConfig } from "hardhat/config";
+import "@nomicfoundation/hardhat-toolbox-mocha-ethers";
+import { defineConfig } from "hardhat/config";
 
-const config: HardhatUserConfig = {
+export default defineConfig({
   solidity: "0.8.28",
-};
-
-export default config;
+});
